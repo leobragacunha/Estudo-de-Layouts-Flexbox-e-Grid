@@ -1,0 +1,117 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER FLEXBOX*/
+div.flexboxHeader {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: black;
+    color:antiquewhite;
+    font-size: 1.5em;
+}
+
+div.flexboxHeader a {
+    text-decoration:none;
+    color:antiquewhite;
+    margin-left: 25px;
+
+}
+
+div.flexboxHeader nav ul {
+    display:flex;
+    flex-direction: row;    
+}
+
+div.flexboxHeader nav ul li {
+    list-style-type: none;
+    margin-right: 25px;
+}
+
+
+/*BODY GRID*/
+
+h1 {
+    text-align: center;
+}
+
+div.gridMainContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    max-width: 80%;
+/*    border: 2px solid black;
+*/    margin: 0 auto;
+}
+
+div.imageBox img, div.anuncio img {
+    max-width:100%;
+
+}
+
+
+div.imageBox p, div.anuncio p {
+    text-align:center;
+
+}
+
+ 
+
+div.gridMainContainer > div:nth-child(n+4) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+}
+
+div.gridMainContainer > div.anuncio {
+    grid-column: 1;
+    grid-row: 2/5;
+    display: block;
+}
+
+div.anuncio p {
+    grid-row: 3/5;
+    align-items: end;
+    background-color: rgba(0,0,0,0.5);
+
+}
+
+/* RWD */
+
+@media screen and (max-width: 800px){
+    div.gridMainContainer {
+        grid-template-columns: repeat(2, 1fr);  
+    }
+
+    div.gridMainContainer > div:nth-child(n+4) {
+        display: block;
+    }
+
+    div.gridMainContainer > div.anuncio {
+        grid-row: 3/4;
+        grid-column: 1/3; 
+    }
+
+@media screen and (max-width:500px){
+    div.gridMainContainer {
+        grid-template-columns: 1fr;
+    }
+
+    div.gridMainContainer > div:nth-child(n+4) {
+        display: block;
+    }
+
+    div.gridMainContainer > div.anuncio {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+
+}

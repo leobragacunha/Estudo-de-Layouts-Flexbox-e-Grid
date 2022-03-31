@@ -1,0 +1,88 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER FLEXBOX*/
+div.flexboxHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: antiquewhite;
+    font-size: 1.5em;
+}
+
+div.flexboxHeader a {
+    text-decoration: none;
+    color: antiquewhite;
+    margin-left: 25px;
+}
+
+div.flexboxHeader nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+    div.flexboxHeader nav ul li {
+        list-style-type: none;
+        margin-right: 25px;
+    }
+
+
+/*BODY GRID*/
+
+h1 {
+    text-align: center;
+}
+
+div.gridMainContainer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2%;
+
+    width: 90%;
+    margin: auto;
+    /*border: 1px solid black;*/
+}
+
+div.gridMainContainer .searchBar .imageBox img, div.gridMainContainer .video img {
+    max-width: 100%;
+}
+
+div.gridMainContainer .video{
+    grid-row: 1/4;
+    text-align: center;
+}
+
+div.gridMainContainer .searchBar .imageBox{
+    grid-column: 2/3;
+    text-align: center;
+}
+
+/*RWD*/
+@media screen and (max-width: 700px) {
+    div.gridMainContainer {
+        grid-template-columns: 1fr;
+    }
+
+    div.gridMainContainer .video {
+        grid-row: auto;
+    }
+    
+    /*THE SEARCH BAR DISPLAY FOR SMALL DEVICES USES DISPLAY FLEX!!!*/
+    div.gridMainContainer .searchBar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow-y: scroll;
+    }
+
+    div.gridMainContainer .searchBar .imageBox {
+        flex: 1 0 100px;
+        margin: 0 5px;
+    }
+}
+
